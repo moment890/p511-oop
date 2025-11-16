@@ -20,7 +20,6 @@ namespace p511_oop {
         }
     }
 
-
     internal class Program
     {
         static void Main(string[] args)
@@ -41,13 +40,8 @@ namespace p511_oop {
             student1.Introduce();
            
             Console.WriteLine();
-            
             student2.Introduce();
-           
             Console.ReadKey(); 
-
-
-
         }
     }
 }
