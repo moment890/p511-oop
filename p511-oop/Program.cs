@@ -12,7 +12,7 @@ namespace p511_oop {
 
         // Method that prints a message when the engine starts
         public void CarLed() {
-            Console.WriteLine($"The car of brand {Brand} has started!");
+            Console.WriteLine($"Машина марки {Brand} завелась!");
         }
     }
 
