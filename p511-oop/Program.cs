@@ -5,43 +5,39 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace p511_oop {
-    class User {
-        public string name;
-        public string surname;
-        public int age;
-        public string city;
+    // Class representing an automobile
+    public class Automobile {
+        // Property to store the brand of the vehicle
+        public string Brand { get; set; }
 
-
-
-        public User(string name , string surname , int age , string city) 
-        {
-         this.name = name;
-         this.surname = surname;
-         this.age = age;
-         this.city = city;
-
-        } 
-
-
-        public void print() 
-        {
-            Console .WriteLine( $"Name:{name}, Surname: {surname}, Age: {age}, city: {city}");
+        // Method that prints a message when the engine starts
+        public void CarLed() {
+            Console.WriteLine($"The car of brand {Brand} has started!");
         }
+    }
 
-            
-        
+    // Class representing a driver
+    public class Driver {
+        // Property to store the driver's name
+        public string Name { get; set; }
 
+        // Method that simulates driving by starting a specified car model
+        public void DriveCar(string carBrand) {
+            // Create an instance of the Automobile class and assign its brand
+            Automobile car = new Automobile { Brand = carBrand };
+
+            // Call the method to start the car's engine
+            car.CarLed();
         }
+    }
 
+    internal class Program {
+        static void Main(string[] args) {
+            // Create a driver object and specify their name
+            Driver driver = new Driver { Name = "Artyom" };
 
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-
-            User user = new User("bob" , "doe" , 25 ,"tyumen" );
-
-            user.print();
+            // The driver drives a car of brand "BNW"
+            driver.DriveCar("BNW");
 
             Console.ReadKey();
         }
