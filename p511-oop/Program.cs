@@ -5,18 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace p511_oop {
-  
-    
-    
-    public class Student 
+    class animal 
     {
-        public string firstName;
-        public string lastName;
-        public int age;
-
-        public void Introduce() 
+        protected string Name { get; set; }
+       
+        public animal(string name) 
         {
-            Console.WriteLine($"ПРИВЕТ, меня зовут {firstName} {lastName}, мне {age} лет.");
+            Name = name;
+        }
+
+        public virtual void eat() 
+       {
+            Console.WriteLine("животное ест");
+       }
+    }
+    class Dog : animal
+    {
+       public Dog(string name):base(name) { }
+        public override void eat() 
+        {
+            Console.WriteLine($"{Name}(кушает корм)");
+        }
+    }
+
+    class Cat : animal {
+        public Cat (string name) : base(name) { }
+        public override void eat() 
+        {
+            Console.WriteLine($"{Name}(лежит на диване)");
         }
     }
 
@@ -24,23 +40,10 @@ namespace p511_oop {
     {
         static void Main(string[] args)
         {
-
-            Student student1 = new Student();
-            student1.firstName = "Артём";
-            student1.lastName = "Костромин";
-            student1.age = 15;
-
-            Student student2 = new Student();
-            student2.firstName = "Анатолий";
-            student2.lastName = "Костромин";
-            student2.age = 20;
-
-
-            Console.WriteLine("___ Знакомство со студентами ___");
-            student1.Introduce();
-           
-            Console.WriteLine();
-            student2.Introduce();
+            Dog dog = new Dog("bob");
+            dog.eat();
+            Cat cat = new Cat("tom");
+            cat.eat();
             Console.ReadKey(); 
         }
     }
