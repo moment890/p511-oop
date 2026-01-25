@@ -14,17 +14,17 @@ namespace p511_oop {
 
     internal class Program {
         static void Main(string[] args) {
-            //Person person = new Person {
-            //    Name = "John",
-            //    Age = 30
-            //};
+           Person person = new Person {
+               Name = "John",
+                Age = 30
+            };
 
             // Создание JSON
-            //string json = JsonSerializer.Serialize(person);
-            //Console.WriteLine(json);
+           string json = JsonSerializer.Serialize(person);
+            Console.WriteLine(json);
 
-            // Преобразование из JSON в объект
-            //Person deserialized = JsonSerializer.Deserialize<Person>(json);
+           // Преобразование из JSON в объект
+            Person deserialized = JsonSerializer.Deserialize<Person>(json);
             const string URL = "https://jsonplaceholder.org/posts";
 
             HttpClient client = new HttpClient();
